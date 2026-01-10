@@ -57,7 +57,7 @@ export default function Page() {
         className="heroBanner"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.92)), url(${assets.banner})`,
-          // This is the key change to ensure you can see the full "$CHUM" word on the banner.
+          // Show full "$CHUM" on the banner
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center top",
@@ -68,7 +68,8 @@ export default function Page() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs tracking-wide text-white/80">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                The ocean is quiet… until <span className="text-white">we</span> make it roar.
+                The ocean is quiet… until <span className="text-white">we</span>{" "}
+                make it roar.
               </div>
 
               <h1 className="mt-4 text-4xl font-extrabold leading-tight md:text-5xl">
@@ -135,8 +136,8 @@ export default function Page() {
               </div>
 
               <div className="mt-4 text-xs text-white/55">
-                Not financial advice. DYOR. In this Reef, we don’t beg for
-                pumps — we build pressure until the chart has no choice.
+                Not financial advice. DYOR. In this Reef, we don’t beg for pumps
+                — we build pressure until the chart has no choice.
               </div>
             </div>
 
@@ -179,9 +180,7 @@ export default function Page() {
             <div className="statCard">
               <div className="statLabel">Ticker</div>
               <div className="statValue">$CHUM</div>
-              <div className="statHint">
-                Easy to remember. Impossible to fade.
-              </div>
+              <div className="statHint">Easy to remember. Impossible to fade.</div>
             </div>
             <div className="statCard">
               <div className="statLabel">Vibe</div>
@@ -273,12 +272,12 @@ export default function Page() {
             <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5">
               <div className="relative aspect-[16/10] w-full">
                 <Image
-  src={img}
-  alt={title}
-  fill
-  className="object-cover object-top"
-  sizes="(max-width: 768px) 100vw, 50vw"
-/>
+                  src={assets.beach}
+                  alt="BullShark Beach"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
               <div className="p-5">
                 <div className="text-sm font-semibold">
@@ -321,6 +320,8 @@ export default function Page() {
             img={assets.charge}
             title="The Charge"
             copy="When the market hesitates, we accelerate. That’s how legends are made."
+            // Fix: keep BullShark's face from getting clipped on this specific image
+            imgClassName="object-cover object-top"
           />
 
           <GalleryCard
@@ -342,6 +343,8 @@ export default function Page() {
             img={assets.redCandle}
             title="The Feast"
             copy="Red candles aren’t problems — they’re $CHUM in the water."
+            // Optional: also keep the top framed nicely
+            imgClassName="object-cover object-top"
           />
         </div>
       </section>
@@ -394,7 +397,9 @@ export default function Page() {
           <div className="mt-8 rounded-2xl border border-white/15 bg-black/35 p-4">
             <div className="text-xs text-white/60">Mint / CA</div>
             <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="break-all font-mono text-sm text-white/90">{CA}</div>
+              <div className="break-all font-mono text-sm text-white/90">
+                {CA}
+              </div>
               <button className="btnGhost" onClick={copyCA} type="button">
                 {copied ? "Copied ✅" : "Copy"}
               </button>
@@ -460,11 +465,13 @@ function GalleryCard({
   title,
   copy,
   className = "",
+  imgClassName = "object-cover",
 }: {
   img: string;
   title: string;
   copy: string;
   className?: string;
+  imgClassName?: string;
 }) {
   return (
     <div
@@ -475,7 +482,7 @@ function GalleryCard({
           src={img}
           alt={title}
           fill
-          className="object-cover"
+          className={imgClassName}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
