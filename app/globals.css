@@ -304,3 +304,135 @@ code {
   border: 1px dashed rgba(255,255,255,0.18);
   background: rgba(255,255,255,0.04);
 }
+
+/* --- BullShark enhancements (safe add-on) --- */
+
+.heroBanner{
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* KEY FIX: makes the full $CHUM banner visible */
+  background-size: contain;
+}
+
+@media (min-width: 768px){
+  .heroBanner{
+    background-position: center top;
+    background-size: contain;
+  }
+}
+
+.btnPrimary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.75rem 1rem;
+  border-radius:9999px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btnPrimary:hover{ transform: translateY(-1px); background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.22); }
+
+.btnGhost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.75rem 1rem;
+  border-radius:9999px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.20);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btnGhost:hover{ transform: translateY(-1px); background: rgba(0,0,0,.32); border-color: rgba(255,255,255,.22); }
+
+.btnCopy{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1rem;
+  border-radius:9999px;
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.42);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  white-space: nowrap;
+}
+.btnCopy:hover{ transform: translateY(-1px); background: rgba(0,0,0,.55); border-color: rgba(255,255,255,.26); }
+
+.statCard{
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  border-radius: 1.25rem;
+  padding: 1rem;
+}
+.statLabel{ font-size:.75rem; color: rgba(255,255,255,.60); }
+.statValue{ margin-top:.25rem; font-size:1.05rem; font-weight:900; }
+.statHint{ margin-top:.35rem; font-size:.85rem; color: rgba(255,255,255,.68); }
+
+.featureRow{
+  display:flex;
+  gap:.75rem;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  border-radius: 1rem;
+  padding: .9rem 1rem;
+}
+.featureDot{
+  margin-top:.35rem;
+  width:.5rem; height:.5rem;
+  border-radius:9999px;
+  background: rgba(52, 211, 153, .95);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, .12);
+  flex: 0 0 auto;
+}
+.featureTitle{ font-weight:800; }
+.featureCopy{ margin-top:.15rem; color: rgba(255,255,255,.70); font-size:.92rem; }
+
+.cardGlow{
+  position: relative;
+}
+.cardGlow:before{
+  content:"";
+  position:absolute;
+  inset:-20px;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.10), transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(52,211,153,.10), transparent 55%);
+  filter: blur(12px);
+  z-index: -1;
+}
+
+.miniCard{
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.30);
+  border-radius: 1rem;
+  padding: .8rem .9rem;
+}
+.miniTitle{ font-size:.8rem; font-weight:900; letter-spacing:.02em; }
+.miniCopy{ margin-top:.2rem; font-size:.85rem; color: rgba(255,255,255,.70); }
+
+.ctaStrip{
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 55%),
+              radial-gradient(circle at 80% 60%, rgba(52,211,153,.08), transparent 55%),
+              rgba(0,0,0,.35);
+}
+
+.footerLink{
+  display:inline-flex;
+  padding:.4rem .7rem;
+  border-radius:9999px;
+  border:1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.04);
+}
+.footerLink:hover{
+  color: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+}
