@@ -57,10 +57,10 @@ export default function Page() {
         className="heroBanner"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.92)), url(${assets.banner})`,
-          // Show full "$CHUM" on the banner
-          backgroundSize: "contain",
+          // Keep the full banner visible + centered (prevents text chopping on mobile)
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center top",
+          backgroundPosition: "center",
         }}
       >
         <div className="mx-auto w-full max-w-6xl px-5 py-16 md:py-20">
@@ -78,8 +78,8 @@ export default function Page() {
 
               <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
                 This isn’t a “maybe” token. This is a{" "}
-                <span className="text-white">must-be-there</span> community.
-                When the tide flips bullish, BullShark doesn’t swim… he{" "}
+                <span className="text-white">must-be-there</span> community. When
+                the tide flips bullish, BullShark doesn’t swim… he{" "}
                 <span className="text-white">charges</span>.
               </p>
 
@@ -144,15 +144,21 @@ export default function Page() {
             {/* Hero Art */}
             <div className="relative">
               <div className="cardGlow">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-white/15 bg-white/5">
-                  <Image
-                    src={assets.master}
-                    alt="BullShark Master"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                {/* FIX: make the HERO image show the full words AND bullshark nicely on mobile:
+                    - use object-contain (no cropping)
+                    - give it a slightly wider aspect on small screens
+                */}
+                <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/5">
+                  <div className="relative aspect-[16/12] sm:aspect-[4/5] w-full">
+                    <Image
+                      src={assets.master}
+                      alt="BullShark Master"
+                      fill
+                      priority
+                      className="object-contain object-center"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
 
                 <div className="mt-4 grid grid-cols-2 gap-3">
@@ -180,7 +186,9 @@ export default function Page() {
             <div className="statCard">
               <div className="statLabel">Ticker</div>
               <div className="statValue">$CHUM</div>
-              <div className="statHint">Easy to remember. Impossible to fade.</div>
+              <div className="statHint">
+                Easy to remember. Impossible to fade.
+              </div>
             </div>
             <div className="statCard">
               <div className="statLabel">Vibe</div>
@@ -320,7 +328,6 @@ export default function Page() {
             img={assets.charge}
             title="The Charge"
             copy="When the market hesitates, we accelerate. That’s how legends are made."
-            // Fix: keep BullShark's face from getting clipped on this specific image
             imgClassName="object-cover object-top"
           />
 
@@ -343,7 +350,6 @@ export default function Page() {
             img={assets.redCandle}
             title="The Feast"
             copy="Red candles aren’t problems — they’re $CHUM in the water."
-            // Optional: also keep the top framed nicely
             imgClassName="object-cover object-top"
           />
         </div>
