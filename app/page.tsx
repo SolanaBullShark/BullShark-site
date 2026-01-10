@@ -273,12 +273,12 @@ export default function Page() {
             <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5">
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src={assets.beach}
-                  alt="BullShark Beach"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+  src={img}
+  alt={title}
+  fill
+  className="object-cover object-top"
+  sizes="(max-width: 768px) 100vw, 50vw"
+/>
               </div>
               <div className="p-5">
                 <div className="text-sm font-semibold">
