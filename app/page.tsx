@@ -98,7 +98,7 @@ export default function Page() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Join The Reef (TG)
+                  Join The Shiver (TG)
                 </a>
                 <a
                   className="btnGhost"
@@ -136,7 +136,7 @@ export default function Page() {
               </div>
 
               <div className="mt-4 text-xs text-white/55">
-                Not financial advice. DYOR. In this Reef, we don’t beg for pumps
+                Not financial advice. DYOR. In this Shiver, we don’t beg for pumps
                 — we build pressure until the chart has no choice.
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function Page() {
             <p className="mt-4 text-white/75 leading-relaxed">
               Most projects beg for attention. BullShark{" "}
               <span className="text-white">takes it</span>. This is the spot
-              where conviction links up, memes go nuclear, and the whole Reef
+              where conviction links up, memes go nuclear, and the whole Shiver
               moves as one.
               <br />
               <br />
@@ -252,7 +252,7 @@ export default function Page() {
               <div className="featureRow">
                 <span className="featureDot" />
                 <div>
-                  <div className="featureTitle">The Reef Mentality</div>
+                  <div className="featureTitle">The Shiver Mentality</div>
                   <div className="featureCopy">
                     One mission: make $CHUM{" "}
                     <span className="text-white">inevitable</span>.
@@ -268,7 +268,7 @@ export default function Page() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Join the Reef (TG)
+                Join the Shiver (TG)
               </a>
               <button className="btnGhost" onClick={copyCA} type="button">
                 {copied ? "CA Copied ✅" : "Copy CA"}
@@ -309,7 +309,7 @@ export default function Page() {
             </h3>
             <p className="mt-2 text-white/70">
               Every frame says one thing:{" "}
-              <span className="text-white">this Reef is built to win.</span>
+              <span className="text-white">this Shiver is built to win.</span>
             </p>
           </div>
           <a
@@ -365,7 +365,7 @@ export default function Page() {
               </h4>
               <p className="mt-3 text-white/75 leading-relaxed">
                 If you’ve ever said “I wish I got in earlier”… this is the moment
-                you stop saying it. Join the Reef and move with the BullShark.
+                you stop saying it. Join the Shiver and move with the BullShark.
               </p>
             </div>
 
@@ -418,7 +418,7 @@ export default function Page() {
       <footer className="mx-auto w-full max-w-6xl px-5 pb-12 pt-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="text-sm text-white/65">
-            © {new Date().getFullYear()} BullShark • $CHUM • Built for the Reef
+            © {new Date().getFullYear()} BullShark • $CHUM • Built for the Shiver
           </div>
 
           <div className="flex flex-wrap gap-3">
