@@ -199,7 +199,7 @@ export default function Page() {
             </div>
             <div className="statCard">
               <div className="statLabel">Community</div>
-              <div className="statValue">The Reef</div>
+              <div className="statValue">The Shiver</div>
               <div className="statHint">
                 Early believers become legends when the ocean turns green.
               </div>
